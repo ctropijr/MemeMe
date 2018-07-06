@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,10 +19,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="YR5-tP-U3o">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YR5-tP-U3o">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
-                                    <barButtonItem title="Pick From Album" id="Otb-gw-kir">
+                                    <barButtonItem title="Pick From Album" width="1" id="Otb-gw-kir">
                                         <inset key="largeContentSizeImageInsets" minX="1" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <connections>
                                             <action selector="pickAnImage:" destination="BYZ-38-t0r" id="SPT-uW-IDV"/>
@@ -33,21 +34,22 @@
                                         </connections>
                                     </barButtonItem>
                                 </items>
+                                <color key="barTintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </toolbar>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="IfC-uB-G0Z">
-                                <rect key="frame" x="16" y="168.5" width="343" height="379"/>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="XbL-jZ-KSm">
+                                <rect key="frame" x="0.0" y="45" width="375" height="521.5"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D0I-F1-vtO" userLabel="Top">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                                     </textField>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NeE-71-slP">
-                                        <rect key="frame" x="0.0" y="63" width="343" height="253"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="748" verticalCompressionResistancePriority="748" translatesAutoresizingMaskIntoConstraints="NO" id="NeE-71-slP">
+                                        <rect key="frame" x="0.0" y="38" width="375" height="445.5"/>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qeQ-tR-ubL" userLabel="Bottom">
-                                        <rect key="frame" x="0.0" y="349" width="343" height="30"/>
+                                        <rect key="frame" x="0.0" y="491.5" width="375" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
@@ -57,13 +59,13 @@
                         </subviews>
                         <color key="backgroundColor" red="0.65869899611398963" green="0.65869899611398963" blue="0.65869899611398963" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IfC-uB-G0Z" secondAttribute="trailing" constant="16" id="06S-OH-wr2"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="IfC-uB-G0Z" secondAttribute="bottom" constant="119.5" id="1ZE-VG-7M3"/>
                             <constraint firstItem="YR5-tP-U3o" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="1qQ-Ar-B0s"/>
+                            <constraint firstItem="YR5-tP-U3o" firstAttribute="top" secondItem="XbL-jZ-KSm" secondAttribute="bottom" multiplier="1.1" symbolic="YES" id="Nd1-8c-0NT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XbL-jZ-KSm" secondAttribute="trailing" id="QDg-Jx-5ry"/>
                             <constraint firstItem="YR5-tP-U3o" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="XSH-qa-7nu"/>
-                            <constraint firstItem="IfC-uB-G0Z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="d0E-gt-Dr5"/>
-                            <constraint firstItem="IfC-uB-G0Z" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="148.5" id="je5-gZ-qwH"/>
                             <constraint firstItem="YR5-tP-U3o" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="nKn-xo-Dph"/>
+                            <constraint firstItem="XbL-jZ-KSm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="ruy-rV-qtH"/>
+                            <constraint firstItem="XbL-jZ-KSm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yUS-Bc-2nw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -75,7 +77,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
+            <point key="canvasLocation" x="136.23188405797103" y="132.06521739130434"/>
         </scene>
     </scenes>
 </document>
