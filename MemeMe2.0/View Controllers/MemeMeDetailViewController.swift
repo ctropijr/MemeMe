@@ -10,7 +10,7 @@ import UIKit
 
 class MemeMeDetailViewController: UIViewController {
 
-    var meme: ViewController.Meme!
+    var meme: Meme!
     
     @IBOutlet weak var imageView: UIImageView!
     

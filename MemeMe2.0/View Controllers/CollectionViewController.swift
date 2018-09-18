@@ -10,7 +10,7 @@ import UIKit
 class CollectionViewController: UICollectionViewController {
     
   
-    var memes: [ViewController.Meme]! {
+    var memes: [Meme]! {
         let object = UIApplication.shared.delegate
         let appDelegate = object as! AppDelegate
         return appDelegate.memes
@@ -24,17 +24,13 @@ class CollectionViewController: UICollectionViewController {
 
         //sets the layout of the collection view:
         
-        flowLayout.itemSize = CGSize(width: 100, height: 100)
+        let space:CGFloat = 3.0
+        let dimension = (view.frame.size.width - (2 * space)) / 3.0
+        let heightDimension = (view.frame.size.height - (2 * space) / 3.0)
         
-        flowLayout.headerReferenceSize = CGSize(width: 0, height: 40)
-        flowLayout.sectionInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
-        
-        //governs space between items within rows
-        flowLayout.minimumInteritemSpacing = 8
-        
-        //space between rows/columns
-        flowLayout.minimumLineSpacing = 8
-
+        flowLayout.minimumInteritemSpacing = space
+        flowLayout.minimumLineSpacing = space
+        flowLayout.itemSize = CGSize(width: dimension, height: heightDimension)
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

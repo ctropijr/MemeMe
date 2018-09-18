@@ -174,12 +174,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
    
     // MARK: MEME Creation and Functions
-    struct Meme {
-        var topText: String
-        var bottomText: String
-        var originalImage: UIImage?
-        var memedImage: UIImage?
-    }
     
     
     func generateMemedImage() -> UIImage {

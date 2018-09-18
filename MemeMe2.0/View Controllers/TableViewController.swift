@@ -22,7 +22,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableView.reloadData()
     }
     
-    var memes: [ViewController.Meme]! {
+    var memes: [Meme]! {
         let object = UIApplication.shared.delegate
         let appDelegate = object as! AppDelegate
         return appDelegate.memes
@@ -39,7 +39,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let memeImage = self.memes[(indexPath as NSIndexPath).row]
         
         cell.tableImageView.image = memeImage.memedImage
-        cell.tableLabel.text = memeImage.topText
+        cell.tableLabel.text = "\(memeImage.topText) \(memeImage.bottomText)"
         
         return cell
     }
