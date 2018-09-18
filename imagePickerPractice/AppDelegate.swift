@@ -9,8 +9,11 @@
 import UIKit
 
 @UIApplicationMain
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+//Make sure to call the ViewController you are grabbing the structure from
+   var memes = [ViewController.Meme]()
     var window: UIWindow?
 
 
