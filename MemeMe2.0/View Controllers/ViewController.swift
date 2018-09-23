@@ -172,69 +172,69 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         return keyboardSize.cgRectValue.height
     }
 
+    //MARK: Other Functions
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        if textField == topTextField {
+            topTextField.attributedPlaceholder = nil
+        } else if textField == bottomTextField {
+            bottomTextField.attributedPlaceholder = nil
+        }
+    }
+    
    
     // MARK: MEME Creation and Functions
     
     
     func generateMemedImage() -> UIImage {
         
-        navbar.isHidden = false
-        toolbar.isHidden = false 
+        navbar.isHidden = true
+        toolbar.isHidden = true
         
         // Render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
-        self.view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
+        view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
         
         let memedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
-        
-        navbar.isHidden = true
-        toolbar.isHidden = true
         
         return memedImage
         
     }
     
-    //MARK: Other Functions
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-       
-            if textField == topTextField {
-            topTextField.attributedPlaceholder = nil
-            } else if textField == bottomTextField {
-                bottomTextField.attributedPlaceholder = nil
-                }
-        }
-    
-    func save() {
+    func save(memedImage: UIImage) {
         
-        // Create the meme
-        let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imagePickerView.image!, memedImage: generateMemedImage())
+        //Create the Meme
+      
+        let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imagePickerView.image!, memedImage: memedImage)
         
         let object = UIApplication.shared.delegate
         let appDelegate = object as! AppDelegate
         appDelegate.memes.append(meme)
-       
+     
+        
     }
     
     @IBAction func composePressed(_ sender: Any) {
         
         cancelButton.isEnabled = true
         view.frame.origin.y = 0
-        let composedMeme = generateMemedImage()
+        let memedImage = generateMemedImage()
         
         
-        let vc = UIActivityViewController(activityItems: [composedMeme], applicationActivities: nil)
-        present(vc, animated: true, completion: nil)
+        let vc = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
         
-    
             vc.completionWithItemsHandler = {(activityType: UIActivityType?, completed: Bool, returnedItems: [Any]?, error: Error?) in
                 
+                
                 if completed {
-                    self.save()
+                    self.save(memedImage: memedImage)
                     self.dismiss(animated: true, completion: nil)
                 }
                 self.resetComposeUI()
-        }
+                
+                }
+        present(vc, animated: true, completion: nil)
       }
     
     @IBAction func cancelButtonPressed(_ sender: Any) {

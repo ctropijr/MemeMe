@@ -10,6 +10,7 @@
 		031E9537214A1AA2000BCD7B /* CellTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031E9536214A1AA2000BCD7B /* CellTableView.swift */; };
 		036E6098214AF69B00213F4F /* MemeMeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036E6097214AF69B00213F4F /* MemeMeDetailViewController.swift */; };
 		038FF7AD2151611300FD62A4 /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038FF7AC2151611300FD62A4 /* Meme.swift */; };
+		038FF7B12151628500FD62A4 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03E62B6220C7670E00D19FC4 /* Info.plist */; };
 		03D75A992138BBC000A269C7 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D75A982138BBC000A269C7 /* CollectionViewController.swift */; };
 		03D75A9B2138BC3800A269C7 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D75A9A2138BC3800A269C7 /* TableViewController.swift */; };
 		03E62B5720C7670E00D19FC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E62B5620C7670E00D19FC4 /* AppDelegate.swift */; };
@@ -173,6 +174,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				038FF7B12151628500FD62A4 /* Info.plist in Resources */,
 				03E62B6120C7670E00D19FC4 /* LaunchScreen.storyboard in Resources */,
 				03E62B5E20C7670E00D19FC4 /* Assets.xcassets in Resources */,
 				03E62B5C20C7670E00D19FC4 /* Main.storyboard in Resources */,
@@ -331,7 +333,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = imagePickerPractice/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MemeMe2.0/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = christophertropiano.imagePickerPractice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -345,7 +347,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = imagePickerPractice/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MemeMe2.0/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = christophertropiano.imagePickerPractice;
 				PRODUCT_NAME = "$(TARGET_NAME)";

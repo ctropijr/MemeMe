@@ -14,16 +14,10 @@ class MemeMeDetailViewController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
     
-    @IBOutlet weak var topLabel: UILabel!
-    
-    @IBOutlet weak var bottomLabel: UILabel!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         imageView.image = meme.memedImage
-        topLabel.text = meme.topText
-        bottomLabel.text = meme.bottomText
         
     }
 
